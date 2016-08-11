@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Hello Riot app</title>
+    <style media="screen">
+      html {
+        font-size: 16px;
+        box-sizing: border-box;
+        font: caption;
+        font-weight: 200;
+        background-color: #161616;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      *, *:before, *:after {
+        box-sizing: inherit;
+        padding:0;
+        margin:0;
+      }
+    </style>
+  </head>
+  <body class="">
+
+    <!-- place tags inside body -->
+    <app></app>
+
+    <!-- include riot.js -->
+    <script src="https://cdn.jsdelivr.net/riot/2.5/riot+compiler.min.js"></script>
+
+    <!-- riot tags -->
+    <script type="riot/tag" src="app.tag"></script>
+
+    <!-- mount this app -->
+    <script>
+      riot.compile(function() {
+        riot.mount('app')
+        riot.route.start(true)
+      })
+    </script>
+
+  </body>
+</html>
