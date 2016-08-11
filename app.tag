@@ -1,7 +1,7 @@
 <app>
     <nav>
       <div class="years_links">
-          <a href="/" class="button hide" id="button">start</a>
+          <a href="/" class="button" id="button">start</a>
 
           <a each={ data } href="#{ animal }">
             { id }
@@ -71,8 +71,6 @@
     <style scoped>
         :scope {}
         nav {
-            min-width: 100vw;
-            min-height: 50vh;
             font-size: calc( 2vh + 2vw);
             display: flex;
             justify-content: center;
@@ -83,33 +81,18 @@
             text-align: center;
         }
         .button {
-            position: fixed;
+            width: 100%;
             top: 0;
             left: 0;
         }
-        .hide {
-            display: none;
-        }
+        .hide { display: none; }
 
         .years_links {
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
             display: flex;
-            -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-            -webkit-box-pack: center;
-            -webkit-justify-content: center;
-            -ms-flex-pack: center;
             justify-content: center;
-            -webkit-box-align: center;
-            -webkit-align-items: center;
-            -ms-flex-align: center;
             align-items: center;
             padding: 1rem;
-            height: 46%;
-            width: 96%;
             margin: 2vh 2vw;
         }
 
