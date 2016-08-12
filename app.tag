@@ -1,19 +1,24 @@
 <app>
     <nav>
         <div class="years_links">
-            <a href="/" class="button" id="button">start</a>
+            <a href="/" class="button left" id="button">WHICH ANIMAL ARE YOU?</a>
 
             <a each={ data } href="#{ animal }">{ id }</a>
         </div>
     </nav>
 
-    <article class="animals">
-        <div class="animal { page.animal }">
-            <span>{ page.id || 'WHICH ANIMAL ARE YOU?' }</span>
-            <span>{ page.element || 'Click the year when you were born!' }</span>
-            <span>{ page.animal || '' }</span>
+    <main class="animals">
+        <div class="animal { page.animal } { page.element } { page.id }">
+            <p class="animal_element right">{ page.element || 'TAP BIRTH YEAR' }</p>
+            <p class="animal_animal right">{ page.animal || '' }</p>
+            <p class="animal_period right">{ page.period || '' }</p>
+            <p class="animal_hours right">{ page.hour || '' }</p>
+            <p class="animal_fixed_element right">{ page.fixed_element || '' }</p>
+            <p class="animal_energy right">{ page.energy || '' }</p>
+            <p class="animal_intensity right">{ page.intensity || '' }</p>
+
         </div>
-    </article>
+    </main>
 
     <script>
 
@@ -22,51 +27,111 @@
             {
                 id: '2000',
                 animal: 'dragon',
-                element: 'metal'
+                element: 'metal',
+                period: 'Feb 05 2000 – Jan 23 2001',
+                hour: '07:00 – 09:00 am',
+                fixed_element: 'Earth',
+                energy: 'Yang',
+                intensity: '4'
             }, {
                 id: '2001',
                 animal: 'snake',
-                element: 'metal'
+                element: 'metal',
+                period: 'Jan 24 2001 – Feb 11 2002',
+                hour: '09:00 – 11:00 am',
+                fixed_element: 'Fire',
+                energy: 'Yin',
+                intensity: '3'
             }, {
                 id: '2002',
                 animal: 'horse',
-                element: 'water'
+                element: 'water',
+                period: 'Feb 12 2002 - Jan 31 2003',
+                hour: '11:00 – 01:00 pm',
+                fixed_element: 'Fire',
+                energy: 'Yin',
+                intensity: '2'
             }, {
                 id: '2003',
                 animal: 'goat',
-                element: 'water'
+                element: 'water',
+                period: 'Feb 01 2003 - Jan 21 2004',
+                hour: '01:00 – 03:00 pm',
+                fixed_element: 'Earth',
+                energy: 'Yang',
+                intensity: '1'
             }, {
                 id: '2004',
                 animal: 'monkey',
-                element: 'wood'
+                element: 'wood',
+                period: 'Jan 22 2004 - Feb 08 2005',
+                hour: '03:00 – 05:00 pm',
+                fixed_element: 'Metal',
+                energy: 'Yang',
+                intensity: '4'
             }, {
                 id: '2005',
                 animal: 'rooster',
-                element: 'wood'
+                element: 'wood',
+                period: 'Feb 09 2005 - Jan 28 2006',
+                hour: '05:00 – 07:00 pm',
+                fixed_element: 'Metal',
+                energy: 'Yin',
+                intensity: '3'
             }, {
                 id: '2006',
                 animal: 'dog',
-                element: 'fire'
+                element: 'fire',
+                period: 'Jan 29 2006 - Feb 17 2007',
+                hour: '07:00 – 09:00 pm',
+                fixed_element: 'Earth',
+                energy: 'Yin',
+                intensity: '2'
             }, {
                 id: '2007',
                 animal: 'pig',
-                element: 'fire'
+                element: 'fire',
+                period: 'Feb 18 2007 - Feb 06 2008',
+                hour: '09:00 – 11:00 pm',
+                fixed_element: 'Water',
+                energy: 'Yang',
+                intensity: '1'
             }, {
                 id: '2008',
                 animal: 'rat',
-                element: 'earth'
+                element: 'earth',
+                period: 'Feb 07 2008 - Jan 25 2009',
+                hour: '11:00 pm – 01:00 am',
+                fixed_element: 'Water',
+                energy: 'Yang',
+                intensity: '4'
             }, {
                 id: '2009',
-                animal: 'buffalo',
-                element: 'earth'
+                animal: 'ox',
+                element: 'earth',
+                period: 'Jan 26 2009 - Feb 13 2010',
+                hour: '01:00 – 03:00 am',
+                fixed_element: 'Earth',
+                energy: 'Yin',
+                intensity: '3'
             }, {
                 id: '2010',
                 animal: 'tiger',
-                element: 'metal'
+                element: 'metal',
+                period: 'Feb 14 2010 - Feb 02 2011',
+                hour: '03:00 – 05:00 am',
+                fixed_element: 'Wood',
+                energy: 'Yin',
+                intensity: '2'
             }, {
                 id: '2011',
                 animal: 'rabbit',
-                element: 'metal'
+                element: 'metal',
+                period: 'Feb 03 2011 - Jan 22 2012',
+                hour: '05:00 – 07:00 am',
+                fixed_element: 'Wood',
+                energy: 'Yang',
+                intensity: '1'
             }
         ]
 
@@ -82,15 +147,17 @@
 
     <style scoped>
         :scope {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          height: 100vh;
-          overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0 auto;
+            padding: 0 2rem;
+            max-width: 1000px;
         }
         nav {
-
             margin: 0;
             padding: 0;
             text-align: center;
@@ -119,14 +186,27 @@
             padding: 0.5rem 1rem;
             color: red;
         }
-        article p {
+        main p {
             text-transform: none;
             text-align: center;
         }
 
         /* animals */
+        .animal > * {
+            padding: 0 0.25rem;
+        }
+        .animal_year {
+            opacity: 0.25;
+        }
+        .animal_element {
+            opacity: 0.75;
+            font-weight: 400;
+        }
+        .animal_animal {
+            font-weight: 700;
+        }
         .animals {
-          align-self: stretch;
+            align-self: stretch;
         }
 
         .animal {
@@ -135,11 +215,21 @@
             text-align: center;
         }
         .animal span {
+            display: inline-block;
+            margin-top: -1rem;
+        }
+        .left {
+          text-align: left;
+        }
+        .right {
+          text-align: right;
+        }
+        label {
           display: inline-block;
-          margin-top: -1rem;
+          opacity: .5;
         }
 
-        .buffalo,
+        .ox,
         .dog,
         .dragon,
         .goat,
@@ -158,40 +248,40 @@
         }
 
         .rat {
-            background-image: url("svg/1/rat.svg");
+            background-image: url("svg/3/rat.svg");
         }
-        .buffalo {
-            background-image: url("svg/1/buffalo.svg");
+        .ox {
+            background-image: url("svg/3/ox.svg");
         }
         .tiger {
-            background-image: url("svg/1/tiger.svg");
+            background-image: url("svg/3/tiger.svg");
         }
         .rabbit {
-            background-image: url("svg/1/rabbit.svg");
+            background-image: url("svg/3/rabbit.svg");
         }
         .dragon {
-            background-image: url("svg/1/dragon.svg");
+            background-image: url("svg/3/dragon.svg");
         }
         .snake {
-            background-image: url("svg/1/snake.svg");
+            background-image: url("svg/3/snake.svg");
         }
         .horse {
-            background-image: url("svg/1/horse.svg");
+            background-image: url("svg/3/horse.svg");
         }
         .goat {
-            background-image: url("svg/1/goat.svg");
+            background-image: url("svg/3/goat.svg");
         }
         .monkey {
-            background-image: url("svg/1/monkey.svg");
+            background-image: url("svg/3/monkey.svg");
         }
         .rooster {
-            background-image: url("svg/1/rooster.svg");
+            background-image: url("svg/3/rooster.svg");
         }
         .dog {
-            background-image: url("svg/1/dog.svg");
+            background-image: url("svg/3/dog.svg");
         }
         .pig {
-            background-image: url("svg/1/pig.svg");
+            background-image: url("svg/3/pig.svg");
         }
 
     </style>
