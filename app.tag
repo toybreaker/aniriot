@@ -201,16 +201,24 @@
             font-weight: 400;
         }
         .animal_animal {
-            font-weight: 700;
+            font-size: 2rem;
+            line-height: normal;
+            font-weight: 100;
         }
         .animals {
             align-self: stretch;
+            min-height: 70vh;
         }
 
         .animal {
-            min-height: 70%;
-            line-height: 2;
+            min-height: 70vh;
+            line-height: 1.4;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-end;
+            padding-bottom: 1rem;
         }
         .animal span {
             display: inline-block;
@@ -242,7 +250,8 @@
             background-position: center top;
             background-repeat: no-repeat;
             background-clip: content-box;
-            background-size: contain;
+            background-size: cover;
+
         }
 
         .rat {
