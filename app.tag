@@ -1,22 +1,41 @@
-<app>
-    <nav>
-        <div class="years_links">
-            <a href="/" class="button left" id="button">WHICH ANIMAL ARE YOU?</a>
+<app class="{ page.animal } { page.element } { page.id }">
+    <nav class="years_links">
+        <a href="/" class="button left" id="button">WHICH ANIMAL ARE YOU?</a>
 
-            <a each={ data } href="#{ animal }">{ id }</a>
-        </div>
+        <a each={ data } href="#{ animal }">{ id }</a>
     </nav>
 
     <main class="animals">
-        <div class="animal { page.animal } { page.element } { page.id }">
-            <p class="animal_element right">{ page.element || 'TAP BIRTH YEAR' }</p>
-            <p class="animal_animal right">{ page.animal || '' }</p>
-            <p class="animal_period right">{ page.period || '' }</p>
-            <p class="animal_hours right">{ page.hour || '' }</p>
-            <p class="animal_fixed_element right">{ page.fixed_element || '' }</p>
-            <p class="animal_energy right">{ page.energy || '' }</p>
-            <p class="animal_intensity right">{ page.intensity || '' }</p>
-
+        <table class="animal">
+          <tr>
+              <td>element</td>
+              <td class="animal_element">{ page.element || 'TAP BIRTH YEAR' }</td>
+            </tr>
+            <tr>
+              <td>animal</td>
+              <td class="animal_animal">{ page.animal || '' }</td>
+            </tr>
+            <tr>
+              <td>period</td>
+              <td class="animal_period">{ page.period || '' }</td>
+            </tr>
+            <tr>
+              <td>hours</td>
+              <td class="animal_hours">{ page.hour || '' }</td>
+            </tr>
+            <tr>
+              <td>fixed element</td>
+              <td class="animal_fixed_element">{ page.fixed_element || '' }</td>
+            </tr>
+            <tr>
+              <td>energy</td>
+              <td class="animal_energy">{ page.energy || '' }</td>
+            </tr>
+            <tr>
+              <td>intensity</td>
+              <td class="animal_intensity">{ page.intensity || '' }</td>
+            </tr>
+          </table>
         </div>
     </main>
 
@@ -147,15 +166,12 @@
 
     <style scoped>
         :scope {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            overflow: hidden;
-            margin: 0 auto;
-            padding: 0 1rem;
-            max-width: 1000px;
+          display: block;
+          position: fixed;
+          top: 0; left: 0; right: 0; bottom: 0;
+          overflow: hidden;
+          margin: 0;
+          padding: 0 1rem;
         }
         nav {
             margin: 0;
@@ -179,14 +195,9 @@
         }
 
         a {
-            display: inline-block;
             text-decoration: none;
             padding: 0.5rem 1rem;
             color: red;
-        }
-        main p {
-            text-transform: none;
-            text-align: center;
         }
 
         /* animals */
@@ -207,22 +218,25 @@
         }
         .animals {
             align-self: stretch;
-            min-height: 70vh;
         }
 
         .animal {
-            min-height: 70vh;
-            line-height: 1.4;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            justify-content: flex-end;
-            padding-bottom: 1rem;
+          min-width: 100%;
+          min-height: 100%;
+          line-height: 1.4;
+          text-align: center;
+          padding-bottom: 1rem;
         }
-        .animal span {
-            display: inline-block;
-            margin-top: -1rem;
+        .animal tr {
+
+        }
+        .animal td:first-child {
+          text-align: left;
+          color: #666;
+          font-size: .75rem;
+        }
+        .animal td:last-child {
+          text-align: right;
         }
         .left {
           text-align: left;
@@ -235,59 +249,59 @@
           opacity: .5;
         }
 
-        .ox,
-        .dog,
-        .dragon,
-        .goat,
-        .horse,
-        .monkey,
-        .pig,
-        .rabbit,
-        .rat,
-        .rooster,
-        .snake,
-        .tiger {
-            background-position: center top;
+        :scope.ox,
+        :scope.dog,
+        :scope.dragon,
+        :scope.goat,
+        :scope.horse,
+        :scope.monkey,
+        :scope.pig,
+        :scope.rabbit,
+        :scope.rat,
+        :scope.rooster,
+        :scope.snake,
+        :scope.tiger {
+            background-position: center bottom;
             background-repeat: no-repeat;
             background-clip: content-box;
-            background-size: cover;
+            background-size: contain;
 
         }
 
-        .rat {
+        :scope.rat {
             background-image: url("svg/3/rat.svg");
         }
-        .ox {
+        :scope.ox {
             background-image: url("svg/3/ox.svg");
         }
-        .tiger {
+        :scope.tiger {
             background-image: url("svg/3/tiger.svg");
         }
-        .rabbit {
+        :scope.rabbit {
             background-image: url("svg/3/rabbit.svg");
         }
-        .dragon {
+        :scope.dragon {
             background-image: url("svg/3/dragon.svg");
         }
-        .snake {
+        :scope.snake {
             background-image: url("svg/3/snake.svg");
         }
-        .horse {
+        :scope.horse {
             background-image: url("svg/3/horse.svg");
         }
-        .goat {
+        :scope.goat {
             background-image: url("svg/3/goat.svg");
         }
-        .monkey {
+        :scope.monkey {
             background-image: url("svg/3/monkey.svg");
         }
-        .rooster {
+        :scope.rooster {
             background-image: url("svg/3/rooster.svg");
         }
-        .dog {
+        :scope.dog {
             background-image: url("svg/3/dog.svg");
         }
-        .pig {
+        :scope.pig {
             background-image: url("svg/3/pig.svg");
         }
 
