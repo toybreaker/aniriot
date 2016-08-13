@@ -148,13 +148,13 @@
     <style scoped>
         :scope {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             flex-direction: column;
             height: 100vh;
             overflow: hidden;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
             max-width: 1000px;
         }
         nav {
@@ -174,10 +174,8 @@
         .years_links {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 1rem;
-            margin: 2vh 2vw;
         }
 
         a {
