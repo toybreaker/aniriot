@@ -192,6 +192,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            padding-bottom: 1rem;
         }
 
         a {
