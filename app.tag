@@ -1,4 +1,4 @@
-<app class="{ page.animal } { page.element } { page.id }">
+<app class="{ page.animal || 'home' } { page.element } { page.id }">
     <nav class="years_links">
         <a href="/" class="button left" id="button">WHICH ANIMAL ARE YOU?</a>
 
@@ -230,6 +230,9 @@
         }
         .animal tr {
 
+        }
+        :scope.home td:first-child {
+          display: none;
         }
         .animal td:first-child {
           text-align: left;
