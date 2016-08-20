@@ -7,33 +7,34 @@
 
     <main class="animals">
         <table class="animal">
+          <tr>
+            <td>You're born:</td>
+            <td class="animal_period">{ page.period || '' }</td>
+          </tr>
             <tr>
-              <td>animal</td>
+              <td>You are a:</td>
               <td class="animal_animal">{ page.animal || '' }</td>
             </tr>
             <tr>
-              <td>moves like</td>
+              <td>You move like:</td>
               <td class="animal_element">{ page.element || 'TAP BIRTH YEAR' }</td>
             </tr>
 
+
             <tr>
-              <td>period</td>
-              <td class="animal_period">{ page.period || '' }</td>
-            </tr>
-            <tr>
-              <td>hours</td>
+              <td>Your hours:</td>
               <td class="animal_hours">{ page.hour || '' }</td>
             </tr>
             <tr>
-              <td>fixed element</td>
+              <td>Your fixed element:</td>
               <td class="animal_fixed_element">{ page.fixed_element || '' }</td>
             </tr>
             <tr>
-              <td>energy</td>
+              <td>Your energy:</td>
               <td class="animal_energy">{ page.energy || '' }</td>
             </tr>
             <tr>
-              <td>intensity</td>
+              <td>Your intensity:</td>
               <td class="animal_intensity">{ page.intensity || '' }</td>
             </tr>
           </table>
@@ -220,6 +221,10 @@
         .animal_animal {
             font-size: 2rem;
             line-height: normal;
+            font-weight: 100;
+        }
+        .animal_period {
+            font-size: 1rem;
             font-weight: 100;
         }
         .animals {
