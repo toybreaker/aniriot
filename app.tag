@@ -7,14 +7,15 @@
 
     <main class="animals">
         <table class="animal">
-          <tr>
-              <td>element</td>
-              <td class="animal_element">{ page.element || 'TAP BIRTH YEAR' }</td>
-            </tr>
             <tr>
               <td>animal</td>
               <td class="animal_animal">{ page.animal || '' }</td>
             </tr>
+            <tr>
+              <td>moves like</td>
+              <td class="animal_element">{ page.element || 'TAP BIRTH YEAR' }</td>
+            </tr>
+
             <tr>
               <td>period</td>
               <td class="animal_period">{ page.period || '' }</td>
@@ -182,6 +183,7 @@
             width: 100%;
             margin-top: 1rem;
             left: 0;
+            font-size: 1.25rem;
         }
         .hide {
             display: none;
@@ -193,6 +195,9 @@
             justify-content: space-between;
             align-items: center;
             padding-bottom: 1rem;
+        }
+        :scope:not(.home) .years_links a:not(.button) {
+          display: none;
         }
 
         a {
@@ -209,8 +214,8 @@
             opacity: 0.25;
         }
         .animal_element {
-            opacity: 0.75;
-            font-weight: 400;
+            font-size: 1.5rem;
+            font-weight: 100;
         }
         .animal_animal {
             font-size: 2rem;
