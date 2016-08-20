@@ -1,6 +1,8 @@
 <app class="{ page.animal || 'home' } { page.element } { page.id }">
+
+
+
     <nav class="years_links_wrap">
-        <a href="/" class="button" id="button">WHICH ANIMAL ARE YOU?</a>
 
         <div class="logo only_home">
           <div class="logo_svg_wrap">
@@ -250,8 +252,9 @@
         :scope {
           display: block;
           position: fixed;
-          top: 0; left: 0; right: 0; bottom: 0;
-          overflow: hidden;
+          top: 3rem;
+          left: 0; right: 0; bottom: 0;
+          overflow: scroll;
           margin: 0;
           padding: 0 1rem;
         }
@@ -260,13 +263,7 @@
             padding: 0;
             text-align: center;
         }
-        .button {
-            display: block;
-            width: 100%;
-            margin-top: 1rem;
-            left: 0;
-            font-size: 1.25rem;
-        }
+
         .hide {
             display: none;
         }
@@ -282,11 +279,7 @@
           display: none;
         }
 
-        a {
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            color: red;
-        }
+
 
         :scope.home .only_home {
           display: block;
@@ -297,11 +290,13 @@
         .help {
           text-transform: uppercase;
           position: fixed;
-          bottom: 1rem;
+          bottom: 0;
           font-size: 1.25rem;
+          line-height: 2;
           left: 0;
           width: 100%;
           text-align: center;
+          background-color: #161616;
         }
 
         .logo svg{
@@ -310,7 +305,6 @@
         @media screen and (min-width: 320px) {
           .logo svg{
             display: block;
-
           }
         }
         @media screen and (min-width: 480px) {
@@ -362,7 +356,7 @@
             font-weight: 100;
         }
         .animal_animal {
-            font-size: 2rem;
+            font-size: 1.75rem;
             line-height: normal;
             font-weight: 100;
         }

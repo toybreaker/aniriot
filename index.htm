@@ -7,7 +7,7 @@
     <title>Hello Riot app</title>
     <style media="screen">
       html {
-        font-size: 16px;
+        font-size: 8px;
         box-sizing: border-box;
         font: caption;
         font-weight: 200;
@@ -15,9 +15,19 @@
         color: white;
         text-transform: uppercase;
       }
-      @media screen and (max-width: 320px){
+      @media screen and (min-width: 320px){
         html {
-          font-size: 12px;
+          font-size: 16px;
+        }
+      }
+      @media screen and (min-width: 480px){
+        html {
+          font-size: 18px;
+        }
+      }
+      @media screen and (min-width: 600px){
+        html {
+          font-size: 20px;
         }
       }
 
@@ -30,13 +40,40 @@
         font-size: 1.5rem;
         line-height: 1.2;
       }
+      .app {
+        display: none;
+      }
+      a {
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          color: red;
+      }
+      .button {
+          display: block;
+          width: 100%;
+          margin-top: .5rem;
+          left: 0;
+          font-size: 1rem;
+      }
+      @media screen and (min-width: 480px){
+        .button {
+          font-size: 1.25rem;
+        }
+      }
+      @media screen and (min-width: 600px){
+        .button {
+          font-size: 1.5rem;
+        }
+      }
 
     </style>
   </head>
   <body class="">
 
+    <a href="/" class="button" id="button">WHICH ANIMAL ARE YOU?</a>
+
     <!-- place tags inside body -->
-    <app></app>
+    <app class="app"></app>
 
     <!-- include riot.js -->
     <script src="https://cdn.jsdelivr.net/riot/2.5/riot+compiler.min.js"></script>
