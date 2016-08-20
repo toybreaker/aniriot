@@ -3,9 +3,11 @@
         <a href="/" class="button left" id="button">WHICH ANIMAL ARE YOU?</a>
 
         <a each={ data } href="#{ animal }">{ id }</a>
+        <div class="help">tap birth year</div>
     </nav>
 
     <main class="animals">
+
         <table class="animal">
           <tr>
             <td>You're born:</td>
@@ -17,7 +19,7 @@
             </tr>
             <tr>
               <td>You move like:</td>
-              <td class="animal_element">{ page.element || 'TAP BIRTH YEAR' }</td>
+              <td class="animal_element">{ page.element || '' }</td>
             </tr>
 
 
@@ -42,7 +44,6 @@
     </main>
 
     <script>
-
         var self = this
         self.data = [
             {
@@ -205,6 +206,19 @@
             text-decoration: none;
             padding: 0.5rem 1rem;
             color: red;
+        }
+
+        :scope.home .help {
+          display: block;
+          text-transform: uppercase;
+          position: fixed;
+          bottom: 20px;
+          left: 0;
+          width: 100%;
+          text-align: center;
+        }
+        :scope:not(home) .help {
+          display: none;
         }
 
         /* animals */
