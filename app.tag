@@ -1,7 +1,5 @@
 <app class="{ page.animal || 'home' } { page.element } { page.id }">
 
-
-
     <nav class="years_links_wrap">
 
         <div class="logo only_home">
